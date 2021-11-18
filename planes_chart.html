@@ -21,8 +21,8 @@
 <script>
 
 // set the dimensions and margins of the graph
-var margin = {top: 10, right: 30, bottom: 90, left: 40},
-    width = 460 - margin.left - margin.right,
+var margin = {top: 10, right: 30, bottom: 90, left: 80},
+    width = 660 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
@@ -51,13 +51,13 @@ svg.append("g")
 
 // Add Y axis
     var y = d3.scaleLinear()
-        .domain([0, 1700000])
+        .domain([1200000, 1700000])
         .range([ height, 0]);
     svg.append("g")
         .call(d3.axisLeft(y));
 
 // Lines
-svg.selectAll("myline")
+/** svg.selectAll("myline")
   .data(data)
   .enter()
   .append("line")
@@ -65,7 +65,7 @@ svg.selectAll("myline")
     .attr("x2", function(d) { return x(d.Year); })
     .attr("y1", function(d) { return y(d.Value); })
     .attr("y2", y(0))
-    .attr("stroke", "grey")
+    .attr("stroke", "grey") */
 
     var plane_d = "m2,106h28l24,30h72l-44,-133h35l80,132h98c21,0 21,34 0,34l-98,0 -80,134h-35l43,-133h-71l-24,30h-28l15,-47"
 // Append group for each data point
@@ -75,7 +75,7 @@ svg.selectAll("myline")
         .enter()
         .append("g")
         .attr("transform", function (d) {
-            return 'translate(' + x(d.Year) + ',' + y(d.Value) + ') rotate(45) scale(0.05)'
+            return 'translate(' + x(d.Year) + ',' + y(d.Value) + ') rotate(45) scale(0.1)'
         })
 
 // draw plane on each group
