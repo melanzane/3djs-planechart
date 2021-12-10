@@ -43,10 +43,10 @@ var x = d3.scaleBand()
   .domain(data.map(function(d) { return d.Year; }))
   .padding(1);
 svg.append("g")
-  .attr("transform", "translate(0," + height + ")")
+        .attr("transform", "translate(0," + height + ")")
   .call(d3.axisBottom(x))
   .selectAll("text")
-    .attr("transform", "translate(-10,0)rotate(-45)")
+    .attr("transform", "translate(-10,0)rotate(-25)")
     .style("text-anchor", "end");
 
 // Add Y axis
@@ -82,7 +82,7 @@ svg.append("g")
     planes.append('path')
         .attr('d', plane_d)
         .style("stroke", "rgba(0,0,0,.4)")
-        .style("fill", "#9823d5")
+        .style("fill", "#E4A229")
 
 })
 </script>
